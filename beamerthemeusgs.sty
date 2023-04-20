@@ -1,0 +1,61 @@
+\mode<presentation>
+
+% Settings
+\usetheme{default}
+\useinnertheme{circles}
+% \useoutertheme{simpleinfo}
+% \useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+\usefonttheme{usgs}
+\usecolortheme{usgs}
+
+% \setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+%\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{blocks}[shadow=false]
+\setbeamertemplate{enumerate items}[default]
+% table of contents (overview)
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[default]
+
+
+% Footer
+\setbeamertemplate{footline}{
+    %\hspace{0.5em} \includegraphics[height=0.6cm]{assets/USGS_ID_black.pdf}
+    \hspace{0.5em}\href{https://www.usgs.gov}{U.S. Geological Survey}
+    \hfill%
+    \usebeamercolor[fg]{page number in head/foot}%
+    \usebeamerfont{page number in head/foot}%
+    \hspace{2em}%
+    \insertframenumber\kern1em\vskip2ex%
+}
+
+% Frame title
+\setbeamertemplate{frametitle}{
+    \nointerlineskip
+    \vskip2ex
+    {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}
+}
+
+% logo
+\newlength{\logoleftwidth}
+\setlength{\logoleftwidth}{0cm}
+\newlength{\logorightwidth}
+\setlength{\logorightwidth}{0cm}
+\newlength{\maxlogowidth}  % space on both sides set to maxlogowidth to keep title centered
+\setlength{\maxlogowidth}{0cm}
+
+\newcommand{\logoright}[1]{
+  \newcommand{\insertlogoright}{#1}
+  \settowidth{\logorightwidth}{\insertlogoright}
+  \addtolength{\logorightwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+\newcommand{\logoleft}[1]{
+  \newcommand{\insertlogoleft}{#1}
+  \settowidth{\logoleftwidth}{\insertlogoleft}
+  \addtolength{\logoleftwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+
+\mode<all>
